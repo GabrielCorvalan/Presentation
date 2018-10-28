@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "RavenDB.Bussiness/1.0.0": {
+        "dependencies": {
+          "RavenDB.Entities": "1.0.0",
+          "RavenDB.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "RavenDB.Bussiness.dll": {}
+        }
+      },
+      "RavenDB.Entities/1.0.0": {
+        "runtime": {
+          "RavenDB.Entities.dll": {}
+        }
+      },
+      "RavenDB.Repositories/1.0.0": {
+        "dependencies": {
+          "RavenDB.Entities": "1.0.0"
+        },
+        "runtime": {
+          "RavenDB.Repositories.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RavenDB.Bussiness/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RavenDB.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RavenDB.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

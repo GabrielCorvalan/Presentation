@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "CouchDB.Bussiness/1.0.0": {
+        "dependencies": {
+          "CouchDB.Entities": "1.0.0",
+          "CouchDB.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "CouchDB.Bussiness.dll": {}
+        }
+      },
+      "CouchDB.Entities/1.0.0": {
+        "runtime": {
+          "CouchDB.Entities.dll": {}
+        }
+      },
+      "CouchDB.Repositories/1.0.0": {
+        "dependencies": {
+          "CouchDB.Entities": "1.0.0"
+        },
+        "runtime": {
+          "CouchDB.Repositories.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CouchDB.Bussiness/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CouchDB.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CouchDB.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
