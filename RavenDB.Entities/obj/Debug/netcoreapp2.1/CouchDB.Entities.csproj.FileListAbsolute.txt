@@ -1,9 +1,0 @@
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\bin\Debug\netcoreapp2.1\CouchDB.Entities.deps.json
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\bin\Debug\netcoreapp2.1\CouchDB.Entities.dll
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\bin\Debug\netcoreapp2.1\CouchDB.Entities.pdb
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\obj\Debug\netcoreapp2.1\CouchDB.Entities.csproj.CoreCompileInputs.cache
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\obj\Debug\netcoreapp2.1\CouchDB.Entities.AssemblyInfoInputs.cache
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\obj\Debug\netcoreapp2.1\CouchDB.Entities.AssemblyInfo.cs
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\obj\Debug\netcoreapp2.1\CouchDB.Entities.dll
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\obj\Debug\netcoreapp2.1\CouchDB.Entities.pdb
-C:\Users\Gabriel Corvalan\Desktop\PresentationRavenDB\PresentationRavenDB\RavenDB.Entities\obj\Debug\netcoreapp2.1\CouchDB.Entities.csprojAssemblyReference.cache
