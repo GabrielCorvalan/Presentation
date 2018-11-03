@@ -5,17 +5,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
-import { UserComponent } from './user/user.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { UserComponent } from './components/user/user.component';
+import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule} from './angular.material/material.module';
+import { MaterialModule} from './material.module';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 // Animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { StudentEditComponent } from './student/student-edit/student-edit.component';
-import { SnackbarComponent } from './snackbar/snackbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -23,11 +22,10 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     AppComponent,
     StudentComponent,
     UserComponent,
-    NavbarComponent,
     HomeComponent,
     SidebarComponent,
     StudentEditComponent,
-    SnackbarComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

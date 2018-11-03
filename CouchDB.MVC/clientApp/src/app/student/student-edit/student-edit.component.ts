@@ -1,6 +1,6 @@
 import { StudentService } from './../student.service';
 import { Component, OnInit } from '@angular/core';
-import { IStudent } from '../../../Interfaces/IStudent';
+import { IStudent } from '../../Interfaces/IStudent';
 import { MatSnackBar } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 

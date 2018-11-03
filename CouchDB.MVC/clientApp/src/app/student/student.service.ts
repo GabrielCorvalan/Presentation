@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
-import { IStudent } from '../../Interfaces/IStudent';
+import { IStudent } from '../Interfaces/IStudent';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
