@@ -1,0 +1,27 @@
+  <div class="contenido">
+    <div class="col-md-10 center-div">
+      <div class="card">
+        <div class="card-header">
+          Materias de Tecnicatura Superior en Programacion
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th> Año </th>
+                <th> Dic. </th>
+                <th> Materia </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let materia of mockMaterias" >
+                <td>{{ materia.anio }}</td>
+                <td>{{ materia.cuatrimestres }} </td>
+                <td>{{ materia.materia }} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -16,11 +16,11 @@ export class StudentService extends DataService {
 
   constructor(private http: HttpClient) {
     super();
-    this.url = 'https://localhost:44321/api';
+    this.url = 'https://localhost:5001/api';
   }
 
   getStudents(): Observable<IStudent[]> {
-    return this.http.get(this.url + '/student/GetAll').pipe(
+    return this.http.get(this.url + '/student').pipe(
       map(res => {
         return res;
       }),

@@ -1,3 +1,4 @@
+import { MateersComponent } from './components/mateers/mateers.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
@@ -8,13 +9,16 @@ import { StudentComponent } from './student/student.component';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule} from './material.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MaterialModule } from './../material.module';
 
 // Animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { StudentEditComponent } from './student/student-edit/student-edit.component';
 import { LoginComponent } from './components/login/login.component';
+import { PlanMatersComponent } from './components/mateers/plan-maters/plan-maters.component';
+import { MateersCreateOrUpdateComponent } from './components/mateers/mateers-create-or-update/mateers-create-or-update.component';
+import { ExamComponent } from './components/exam/exam.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { LoginComponent } from './components/login/login.component';
     HomeComponent,
     SidebarComponent,
     StudentEditComponent,
-    LoginComponent
+    LoginComponent,
+    MateersComponent,
+    PlanMatersComponent,
+    MateersCreateOrUpdateComponent,
+    ExamComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,52 @@
+
+<div class="mt-5">
+  <h2>Agregar materia</h2>
+</div>
+
+<form class="material-form">
+    <div class="form-group">
+        <mat-form-field class="col-md-3 material-full-width">
+            <input  matInput placeholder="Mateer name"
+                    name="name" />
+        </mat-form-field>
+        <mat-form-field class="col-md-3 text-right material-full-width">
+                <input  matInput placeholder="Career"
+                name="lastName"
+                class="col-md-10" />
+        </mat-form-field>
+    </div>
+<!-- 
+    <div class="form-group">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div> -->
+
+    <div class="form-group">
+        <mat-form-field class="material-full-width">
+                    <input  matInput placeholder="City"
+                    name="city"/>
+        </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field class="material-full-width col-md-2">
+        <input  matInput placeholder="Teacher"
+        name="career"/>
+      </mat-form-field>
+      <mat-form-field class="col-md-offset-1 col-md-3">
+        <mat-select placeholder="Careers" [value]="careers">
+          <mat-option *ngFor="let career of careers">
+            {{career}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="example-button-row mt-5">
+        <button class="col-md-3 btn-block" mat-stroked-button color="primary">Submit</button>
+    </div>
+  </form>

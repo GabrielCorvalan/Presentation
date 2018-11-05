@@ -1,6 +1,6 @@
 import {MatCheckboxModule, MatToolbarModule, MatIconModule, MatListModule,
         MatTableModule, MatFormFieldModule, MatButtonToggleModule, MatIcon, MatSnackBarModule,
-        MatCardModule, MatGridListModule} from '@angular/material';
+        MatCardModule, MatGridListModule, MatSelectModule, MatOptionModule} from '@angular/material';
 
 import {MatDatepickerModule, MatDatepickerToggle} from '@angular/material/datepicker';
 import { NgModule } from '@angular/core';
@@ -25,7 +25,9 @@ import {MatButtonModule} from '@angular/material/button';
             MatButtonModule,
             MatSnackBarModule,
             MatCardModule,
-            MatGridListModule],
+            MatGridListModule,
+            MatSelectModule,
+            MatOptionModule],
 
   exports: [MatButtonModule,
             MatCheckboxModule,
@@ -42,6 +44,8 @@ import {MatButtonModule} from '@angular/material/button';
             MatButtonModule,
             MatSnackBarModule,
             MatCardModule,
-            MatGridListModule],
+            MatGridListModule,
+            MatSelectModule,
+            MatOptionModule],
 })
 export class MaterialModule { }
