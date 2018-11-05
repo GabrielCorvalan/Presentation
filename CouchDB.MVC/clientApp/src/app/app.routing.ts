@@ -9,6 +9,7 @@ import { StudentComponent } from '../app/student/student.component';
 import { UserComponent } from '../app/components/user/user.component';
 import { HomeComponent } from '../app/components/home/home.component';
 import { MateersComponent } from './components/mateers/mateers.component';
+import { ExamComponent } from './components/exam/exam.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,11 +25,12 @@ const appRoutes: Routes = [
   // materias
   { path: 'mateers', component: MateersComponent, children: [
   ]},
-  {path: 'mateers/planMateers', component: PlanMatersComponent},
-  {path: 'mateers/add', component: MateersCreateOrUpdateComponent},
-  {path: 'mateers/edit', component: MateersCreateOrUpdateComponent}
+  { path: 'mateers/planMateers', component: PlanMatersComponent},
+  { path: 'mateers/add', component: MateersCreateOrUpdateComponent},
+  { path: 'mateers/edit', component: MateersCreateOrUpdateComponent},
 
-  // teachers
+  // exams
+  { path: 'exams', component: ExamComponent }
 ];
 
 export const appRoutingProviders: any[] = [];
