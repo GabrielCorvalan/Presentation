@@ -1,5 +1,5 @@
-﻿using CouchDB.Entities.Models;
-using CouchDB.Repositories.Interfaces;
+﻿using Presentation.Entities.Models;
+using Presentation.Repositories.Interfaces;
 using MyCouch;
 using MyCouch.Requests;
 using MyCouch.Responses;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CouchDB.Repositories.Repositories
+namespace Presentation.Repositories.Repositories
 {
     public class StudentRepository : BaseRepository, IStudentRepository
     {

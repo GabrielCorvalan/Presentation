@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CouchDB.Bussiness.Services.Interfaces
+namespace Presentation.Bussiness.Services.Interfaces
 {
     public interface IBaseService<T>
     {

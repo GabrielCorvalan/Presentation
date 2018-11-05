@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CouchDB.Entities\Presentation.Entities.csproj" />
+    <ProjectReference Include="..\CouchDB.Repositories\Presentation.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

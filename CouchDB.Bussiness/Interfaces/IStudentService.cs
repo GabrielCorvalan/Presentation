@@ -1,10 +1,10 @@
-﻿using CouchDB.Entities.Models;
+﻿using Presentation.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CouchDB.Bussiness.Services.Interfaces
+namespace Presentation.Bussiness.Services.Interfaces
 {
     public interface IStudentService
     {

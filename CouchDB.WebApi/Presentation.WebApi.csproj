@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CouchDB.Bussiness\CouchDB.Bussiness.csproj" />
+    <ProjectReference Include="..\CouchDB.Bussiness\Presentation.Bussiness.csproj" />
   </ItemGroup>
 
 </Project>

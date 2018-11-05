@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using CouchDB.Bussiness.Services.Interfaces;
-using CouchDB.Entities.Models;
+using Presentation.Bussiness.Services.Interfaces;
+using Presentation.Entities.Models;
 
-namespace CouchDB.WebApi.Controllers
+namespace Presentation.WebApi.Controllers
 {
     [EnableCors("AllowMyOrigin")]
     [Route("api/[controller]")]

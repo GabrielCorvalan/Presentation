@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CouchDB.Entities.Models
+namespace Presentation.Entities.Models
 {
     public class Student : Base
     {

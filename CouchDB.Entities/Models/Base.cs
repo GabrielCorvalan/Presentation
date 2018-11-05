@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CouchDB.Entities.Models
+namespace Presentation.Entities.Models
 {
     public class Base
     {

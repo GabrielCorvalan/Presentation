@@ -1,12 +1,12 @@
-﻿using CouchDB.Bussiness.Services.Interfaces;
-using CouchDB.Entities.Models;
-using CouchDB.Repositories.Interfaces;
+﻿using Presentation.Bussiness.Services.Interfaces;
+using Presentation.Entities.Models;
+using Presentation.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CouchDB.Bussiness.Classes
+namespace Presentation.Bussiness.Classes
 {
     public class StudentService : IStudentService
     {

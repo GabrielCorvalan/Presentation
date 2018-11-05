@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouchDB.Bussiness", "CouchDB.Bussiness\CouchDB.Bussiness.csproj", "{BB1ED40D-8DCE-4449-A62C-97DB3C2F9F81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.Bussiness", "CouchDB.Bussiness\Presentation.Bussiness.csproj", "{BB1ED40D-8DCE-4449-A62C-97DB3C2F9F81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouchDB.Entities", "CouchDB.Entities\CouchDB.Entities.csproj", "{CE4CB3B8-96FC-47BD-808D-550F3AFA5AA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.Entities", "CouchDB.Entities\Presentation.Entities.csproj", "{CE4CB3B8-96FC-47BD-808D-550F3AFA5AA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouchDB.MVC", "CouchDB.MVC\CouchDB.MVC.csproj", "{F0A22C49-0FC5-488D-8B10-E035C5DEE732}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.MVC", "CouchDB.MVC\Presentation.MVC.csproj", "{F0A22C49-0FC5-488D-8B10-E035C5DEE732}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouchDB.Repositories", "CouchDB.Repositories\CouchDB.Repositories.csproj", "{8631A11F-FC5D-412D-A6A5-DA00618A917A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.Repositories", "CouchDB.Repositories\Presentation.Repositories.csproj", "{8631A11F-FC5D-412D-A6A5-DA00618A917A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouchDB.WebApi", "CouchDB.WebApi\CouchDB.WebApi.csproj", "{4960BA4E-4CD1-48A6-817A-1ECD9773B5F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.WebApi", "CouchDB.WebApi\Presentation.WebApi.csproj", "{4960BA4E-4CD1-48A6-817A-1ECD9773B5F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp.Entity", "Tp.Entity\Tp.Entity.csproj", "{1FB3F0C4-69D6-4752-9E3B-310B1315DDDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tp.Entity", "Tp.Entity\Tp.Entity.csproj", "{1FB3F0C4-69D6-4752-9E3B-310B1315DDDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,10 +1,10 @@
-﻿using CouchDB.Entities.Models;
+﻿using Presentation.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CouchDB.Repositories.Interfaces
+namespace Presentation.Repositories.Interfaces
 {
     public interface IStudentRepository
     {

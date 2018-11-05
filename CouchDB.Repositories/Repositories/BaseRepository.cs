@@ -1,10 +1,10 @@
-﻿using CouchDB.Repositories.Interfaces;
+﻿using Presentation.Repositories.Interfaces;
 using MyCouch;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CouchDB.Repositories.Repositories
+namespace Presentation.Repositories.Repositories
 {
     public class BaseRepository
     {

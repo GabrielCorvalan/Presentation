@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CouchDB.Entities\CouchDB.Entities.csproj" />
+    <ProjectReference Include="..\CouchDB.Entities\Presentation.Entities.csproj" />
   </ItemGroup>
 
 </Project>

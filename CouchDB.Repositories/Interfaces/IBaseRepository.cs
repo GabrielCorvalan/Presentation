@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CouchDB.Repositories.Interfaces
+namespace Presentation.Repositories.Interfaces
 {
     public interface IBaseRepository<T>
     {

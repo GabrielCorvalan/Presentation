@@ -1,6 +1,6 @@
-﻿using CouchDB.Bussiness.Services.Interfaces;
+﻿using Presentation.Bussiness.Services.Interfaces;
 
-namespace CouchDB.Bussiness.Classes
+namespace Presentation.Bussiness.Classes
 {
     //public abstract class BaseService<T> : IBaseService<T>
     //{

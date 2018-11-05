@@ -10,12 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using CouchDB.Bussiness.Classes;
-using CouchDB.Bussiness.Services.Interfaces;
-using CouchDB.Repositories.Interfaces;
-using CouchDB.Repositories.Repositories;
+using Presentation.Bussiness.Classes;
+using Presentation.Bussiness.Services.Interfaces;
+using Presentation.Repositories.Interfaces;
+using Presentation.Repositories.Repositories;
 
-namespace CouchDB.WebApi
+namespace Presentation.WebApi
 {
     public class Startup
     {
