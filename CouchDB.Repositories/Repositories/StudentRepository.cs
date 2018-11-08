@@ -8,29 +8,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Tp.Entity.Tp.Entity.Models;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Presentation.Repositories.Repositories
 {
     public class StudentRepository : BaseRepository, IStudentRepository
     {
-        public async Task<List<Student>> GetAllStudents()
+        public List<Students> GetAllStudents()
         {
             var students = new List<Student>();
-            using (var db = GetCredentials())
+            using (var ctx = new SysacadFRGPContext())
             {
-
-                var query = new QueryViewRequest("GetAllStudents", "AllStudents")
-                {
-                    IncludeDocs = true
-                };
-                var response = await db.Views.QueryAsync<Student>(query);
-
-                foreach (var item in response.Rows)
-                {
-                    students.Add(JsonConvert.DeserializeObject<Student>(item.IncludedDoc));
-                }
-
-                return students;
+                return ctx.Students.AsNoTracking().ToList();
             }
         }
         public async Task<Student> GetStudentById(string Id)

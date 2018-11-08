@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Tp.Entity.Tp.Entity.Models;
 
 namespace Presentation.Bussiness.Classes
 {
@@ -21,9 +22,9 @@ namespace Presentation.Bussiness.Classes
             return studentRepo.CreateOrUpdate(student).Result;
         }
 
-        public List<Student> GetAllStudents()
+        public List<Students> GetAllStudents()
         {
-            return studentRepo.GetAllStudents().Result;
+            return studentRepo.GetAllStudents();
         }
 
         public Student GetStudentById(string Id)

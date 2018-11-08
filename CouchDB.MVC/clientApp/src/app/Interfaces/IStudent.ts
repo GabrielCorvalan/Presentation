@@ -1,10 +1,13 @@
 
 export interface IStudent {
-  name: string;
+  id: string;
+  firstName: string;
   lastName: string;
   birthdate: Date;
-  city: string;
-  career: string;
-  _id: string;
-  _rev: string;
+  dni: string;
+  cuil: string;
+  deleted: boolean;
+  studentFile: string;
+  age: number;
+  address: string;
 }

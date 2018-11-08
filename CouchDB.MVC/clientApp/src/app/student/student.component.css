@@ -1,11 +1,11 @@
-.example-container {
+.table-container {
     height: 400px;
     overflow: auto;
-  }
+}
   
-  table {
-    width: 100%;
-  }
+table {
+  width: 100%;
+}
 .container {
   height: 50px;
 }

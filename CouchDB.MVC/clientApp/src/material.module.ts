@@ -1,13 +1,14 @@
 import {MatCheckboxModule, MatToolbarModule, MatIconModule, MatListModule,
         MatTableModule, MatFormFieldModule, MatButtonToggleModule, MatIcon, MatSnackBarModule,
-        MatCardModule, MatGridListModule, MatSelectModule, MatOptionModule} from '@angular/material';
+        MatCardModule, MatGridListModule, MatSelectModule, MatOptionModule, MatNativeDateModule} from '@angular/material';
 
-import {MatDatepickerModule, MatDatepickerToggle} from '@angular/material/datepicker';
+// import {MatDatepickerModule, MatDatepickerToggle} from '@angular/material/datepicker';
 import { NgModule } from '@angular/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   imports: [MatButtonModule,
@@ -27,7 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
             MatCardModule,
             MatGridListModule,
             MatSelectModule,
-            MatOptionModule],
+            MatOptionModule,
+            MatNativeDateModule],
 
   exports: [MatButtonModule,
             MatCheckboxModule,
@@ -40,12 +42,12 @@ import {MatButtonModule} from '@angular/material/button';
             MatFormFieldModule,
             MatInputModule,
             MatDatepickerModule,
-            MatDatepickerModule,
             MatButtonModule,
             MatSnackBarModule,
             MatCardModule,
             MatGridListModule,
             MatSelectModule,
-            MatOptionModule],
+            MatOptionModule,
+            MatNativeDateModule],
 })
 export class MaterialModule { }

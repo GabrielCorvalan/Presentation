@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CouchDB.Entities\Presentation.Entities.csproj" />
+    <ProjectReference Include="..\Tp.Entity\Tp.Entity.csproj" />
   </ItemGroup>
 
 </Project>

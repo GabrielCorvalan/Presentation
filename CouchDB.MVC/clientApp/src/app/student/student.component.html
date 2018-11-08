@@ -1,49 +1,49 @@
 <div class="container">
-    <div class="col-md-4"></div>
-    <div *ngIf="!students.length" class="col-md-1 mt-5" style="margin: 0 auto;">
-        <mat-spinner></mat-spinner>
-    </div>
-    <div *ngIf="students.length">
-    <div class="text-center mb-5">
-      <h2>Students</h2>
-    </div>
-    <div class="example-container mat-elevation-z8">
-        <table mat-table [dataSource]="students">
-          <!-- Position Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef class="text-center"> Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-      
-          <!-- Name Column -->
-          <ng-container matColumnDef="lastName">
-            <th mat-header-cell *matHeaderCellDef class="text-center"> Last Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
-          </ng-container>
-      
-          <!-- Weight Column -->
-          <ng-container matColumnDef="career">
-            <th mat-header-cell *matHeaderCellDef class="text-center"> Career </th>
-            <td mat-cell *matCellDef="let element"> {{element.career}} </td>
-          </ng-container>
-      
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="city">
-            <th mat-header-cell *matHeaderCellDef class="text-center"> City </th>
-            <td mat-cell *matCellDef="let element"> {{element.city}} </td>
-          </ng-container>
+  <div class="col-md-4"></div>
+  <div *ngIf="!students.length" class="col-md-1 mt-5" style="margin: 0 auto;">
+      <mat-spinner></mat-spinner>
+  </div>
+  <div *ngIf="students.length">
+  <div class="text-center mb-5">
+    <h2>Students</h2>
+  </div>
+  <div class="example-container mat-elevation-z8">
+      <table mat-table [dataSource]="students">
+        <!-- Position Column -->
+        <ng-container matColumnDef="firtsName">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="DNI">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> DNI </th>
+          <td mat-cell *matCellDef="let element"> {{element.dni}} </td>
+        </ng-container>
+    
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="studentFile">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> Legajo </th>
+          <td mat-cell *matCellDef="let element"> {{element.studentFile}} </td>
+        </ng-container>
 
-          <ng-container matColumnDef="actions">
-              <th mat-header-cell *matHeaderCellDef class="text-center"> Actions </th>
-              <td mat-cell *matCellDef="let element">
-                <a [routerLink]="['/student/edit', {id: element._id}]"><mat-icon>edit</mat-icon></a>
-                <button class="ml-3" (click)="deleteStudent(element._id)"><mat-icon>delete</mat-icon></button>
-              </td>
-            </ng-container>
-      
-          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      </div>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <a [routerLink]="['/student/edit', {id: element._id}]"><mat-icon>edit</mat-icon></a>
+              <a routerLink="/student" class="ml-3" (click)="deleteStudent(element._id)"><mat-icon>delete</mat-icon></a>
+            </td>
+          </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
     </div>
-    </div>
+  </div>
+</div>

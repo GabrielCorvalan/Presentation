@@ -1,48 +1,53 @@
-  <h1 class="mt-5"> Students</h1>  
-  <form class="material-form" (ngSubmit)="onSubmit()">
-
+  <h1 class="mt-2"> Students</h1>
+<form class="material-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <mat-form-field class="col-md-3 material-full-width">
+        <mat-form-field class="col-md-4 material-full-width">
             <input  matInput placeholder="Name"
-                    name="name"
-                    [(ngModel)]="student.name"
-                    #name="ngModel" />
+            name="name"
+            formControlName="firstName" />
         </mat-form-field>
-        <mat-form-field class="col-md-3 text-right material-full-width">
-                <input  matInput placeholder="Last Name"
-                name="lastName"
-                #lastName="ngModel"
-                [(ngModel)]="student.lastName"
-                class="col-md-10" />
+        <mat-form-field class="col-md-2 text-right material-full-width">
+            <input  matInput placeholder="Last Name"
+            name="lastName"
+            formControlName="lastName"
+            class="col-md-10" />
         </mat-form-field>
     </div>
-
-    <!-- <div class="form-group">
+    <div class="form-group">
+        <mat-form-field class="col-md-2 material-full-width">
+            <input  matInput placeholder="DNI"
+            name="dni"
+            formControlName="dni"/>
+        </mat-form-field>
+        <mat-form-field class="col-md-2 text-right material-full-width">
+            <input  matInput placeholder="Cuil"
+            name="career"
+            formControlName="cuil"/>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+            <mat-form-field class="col-md-4 material-full-width">
+                <input  matInput placeholder="Age"
+                name="age"
+                formControlName="age"/>
+            </mat-form-field>
+            <mat-form-field class="col-md-3 text-right material-full-width">
+                <input  matInput placeholder="Address"
+                name="Address"
+                formControlName="address"/>
+            </mat-form-field>
+        </div>
+    <div class="form-group">
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <input matInput [matDatepicker]="picker" 
+            placeholder="Birthdate"
+            formControlName="birthdate"
+            class="col-md-4">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-    </div> -->
-
-    <div class="form-group">
-        <mat-form-field class="material-full-width">
-                    <input  matInput placeholder="City"
-                    name="city"
-                    #city="ngModel"
-                    [(ngModel)]="student.city"/>
-        </mat-form-field>
-    </div>
-
-    <div class="form-group">
-        <mat-form-field class="material-full-width">
-                    <input  matInput placeholder="Career"
-                    name="career"
-                    #career="ngModel"
-                    [(ngModel)]="student.career"/>
         </mat-form-field>
     </div>
     <div class="example-button-row">
         <button type="submit" mat-fab color="primary">Submit</button>
     </div>
-  </form>
+</form>

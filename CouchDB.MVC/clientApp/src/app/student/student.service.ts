@@ -16,7 +16,7 @@ export class StudentService extends DataService {
 
   constructor(private http: HttpClient) {
     super();
-    this.url = 'https://localhost:5001/api';
+    this.url = 'https://localhost:44321/api';
   }
 
   getStudents(): Observable<IStudent[]> {

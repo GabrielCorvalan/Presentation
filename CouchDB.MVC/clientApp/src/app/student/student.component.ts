@@ -11,16 +11,16 @@ import { MatSnackBar } from '@angular/material';
 })
 export class StudentComponent implements OnInit {
   students: IStudent[] = [];
-  displayedColumns = ['name', 'lastName', 'career', 'city', 'actions'];
+  displayedColumns = ['firtsName', 'lastName', 'DNI', 'studentFile', 'actions'];
   constructor(private studentService: StudentService,
               public snackBar: MatSnackBar) {
   }
   // Cuando inicia el component
   ngOnInit(): void {
-      this.OnLoad();
+      this.getAllStudents();
   }
   // Cargo el formulario
-  OnLoad(): void {
+  getAllStudents(): void {
     this.studentService.getStudents()
       .subscribe((res: IStudent[]) => {
           this.students = res;
@@ -33,7 +33,7 @@ export class StudentComponent implements OnInit {
     this.studentService.deleteStudent(id).subscribe((res: boolean) => {
       if (res) {
         this.openSnackBar('Operacion exitosa', 'Success');
-        this.OnLoad();
+        this.getAllStudents();
         // this.students.reduce(o => o._id == id,);
       } else {
         this.openSnackBar('Error en la operacion', 'Error');
