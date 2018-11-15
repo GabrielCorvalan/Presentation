@@ -10,13 +10,20 @@ import { UserComponent } from '../app/components/user/user.component';
 import { HomeComponent } from '../app/components/home/home.component';
 import { MateersComponent } from './components/mateers/mateers.component';
 import { ExamComponent } from './components/exam/exam.component';
+import { ExamCreateOrUpdateComponent } from './components/exam/exam-create-or-update/exam-create-or-update.component';
+import { UserCreateOrUpdateComponent } from './components/user/user-create-or-update/user-create-or-update.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   // login
   { path: 'login', component: LoginComponent },
+  // Home
   { path: 'home', component: HomeComponent },
+  // Users
   { path: 'user', component: UserComponent },
+  { path: 'user/create-or-update', component: UserCreateOrUpdateComponent, children: [
+    { path: ':id', component: UserCreateOrUpdateComponent }
+  ]},
   // students
   { path: 'student', component: StudentComponent},
   { path: 'student/edit', component: StudentEditComponent, children: [
@@ -26,11 +33,14 @@ const appRoutes: Routes = [
   { path: 'mateers', component: MateersComponent, children: [
   ]},
   { path: 'mateers/planMateers', component: PlanMatersComponent},
-  { path: 'mateers/add', component: MateersCreateOrUpdateComponent},
-  { path: 'mateers/edit', component: MateersCreateOrUpdateComponent},
-
+  { path: 'mateers/create-or-update', component: MateersCreateOrUpdateComponent, children: [
+    { path: ':id', component: MateersCreateOrUpdateComponent }
+  ]},
   // exams
-  { path: 'exams', component: ExamComponent }
+  { path: 'exams', component: ExamComponent },
+  { path: 'exams/create-or-update', component: ExamCreateOrUpdateComponent, children: [
+    { path: ':id', component: ExamCreateOrUpdateComponent }
+  ] }
 ];
 
 export const appRoutingProviders: any[] = [];

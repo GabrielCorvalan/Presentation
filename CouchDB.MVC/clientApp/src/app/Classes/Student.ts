@@ -10,14 +10,14 @@ export class Student {
     studentFile: string;
 
     constructor() {
-        id = '';
-        firstName = '';
-        lastName = '';
-        birthdate = new Date();
-        dni = '';
-        cuil = '';
-        deleted = false;
-        studentFile = '';
+        this.id = '';
+        this.firstName = '';
+        this.lastName = '';
+        this.birthdate = new Date();
+        this.dni = '';
+        this.cuil = '';
+        this.deleted = false;
+        this.studentFile = '';
     }
 // tslint:disable-next-line:eofline
 }
