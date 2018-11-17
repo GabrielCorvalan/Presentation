@@ -1,10 +1,9 @@
 import { StudentService } from './../student.service';
 import { Component, OnInit } from '@angular/core';
-import { IStudent } from '../../Interfaces/IStudent';
+import { IStudent } from '../../../Interfaces/IStudent';
 import { MatSnackBar } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { Student } from 'src/app/Classes/student';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-student-edit',

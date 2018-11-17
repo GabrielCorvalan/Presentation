@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IStudent } from '../Interfaces/IStudent';
+import { IStudent } from '../../Interfaces/IStudent';
 import { StudentService } from './student.service';
 import { map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';

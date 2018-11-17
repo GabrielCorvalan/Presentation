@@ -1,17 +1,19 @@
 import { MateersCreateOrUpdateComponent } from './components/mateers/mateers-create-or-update/mateers-create-or-update.component';
 import { PlanMatersComponent } from './components/mateers/plan-maters/plan-maters.component';
 import { LoginComponent } from './components/login/login.component';
-import { StudentEditComponent } from './student/student-edit/student-edit.component';
+import { StudentEditComponent } from './components/student/student-edit/student-edit.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { StudentComponent } from '../app/student/student.component';
+import { StudentComponent } from './components/student/student.component';
 import { UserComponent } from '../app/components/user/user.component';
 import { HomeComponent } from '../app/components/home/home.component';
 import { MateersComponent } from './components/mateers/mateers.component';
 import { ExamComponent } from './components/exam/exam.component';
 import { ExamCreateOrUpdateComponent } from './components/exam/exam-create-or-update/exam-create-or-update.component';
 import { UserCreateOrUpdateComponent } from './components/user/user-create-or-update/user-create-or-update.component';
+import { CorrelativityComponent } from './components/correlativity/correlativity.component';
+import { CorrelativityAddComponent } from './components/correlativity/correlativity-add/correlativity-add.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,7 +42,12 @@ const appRoutes: Routes = [
   { path: 'exams', component: ExamComponent },
   { path: 'exams/create-or-update', component: ExamCreateOrUpdateComponent, children: [
     { path: ':id', component: ExamCreateOrUpdateComponent }
-  ] }
+  ] },
+  // Correlatividad
+  { path: 'correlativity', component: CorrelativityComponent },
+  { path: 'correlativity/add', component: CorrelativityAddComponent, children: [
+    { path: ':id', component: CorrelativityAddComponent }
+  ]}
 ];
 
 export const appRoutingProviders: any[] = [];

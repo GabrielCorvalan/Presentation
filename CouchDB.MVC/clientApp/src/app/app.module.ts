@@ -5,7 +5,7 @@ import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { StudentComponent } from './student/student.component';
+import { StudentComponent } from './components/student/student.component';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,7 +14,7 @@ import { MaterialModule } from './../material.module';
 
 // Animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { StudentEditComponent } from './student/student-edit/student-edit.component';
+import { StudentEditComponent } from './components/student/student-edit/student-edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { PlanMatersComponent } from './components/mateers/plan-maters/plan-maters.component';
 import { MateersCreateOrUpdateComponent } from './components/mateers/mateers-create-or-update/mateers-create-or-update.component';

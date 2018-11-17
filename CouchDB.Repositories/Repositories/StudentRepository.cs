@@ -1,66 +1,62 @@
 ﻿using Presentation.Entities.Models;
 using Presentation.Repositories.Interfaces;
-using MyCouch;
-using MyCouch.Requests;
-using MyCouch.Responses;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Tp.Entity.Tp.Entity.Models;
+using Tp.Entity.Model;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace Presentation.Repositories.Repositories
 {
     public class StudentRepository : BaseRepository, IStudentRepository
     {
+        private readonly IMapper _mapper;
+        public StudentRepository(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+
         public List<Students> GetAllStudents()
         {
-            var students = new List<Student>();
             using (var ctx = new SysacadFRGPContext())
             {
                 return ctx.Students.AsNoTracking().ToList();
             }
         }
-        public async Task<Student> GetStudentById(string Id)
+        public Students GetStudentById(int Id)
         {
-            using (var db = GetCredentials())
+            using (var ctx = new SysacadFRGPContext())
             {
-                var response = await db.Entities.GetAsync<Student>(Id);
-
-                return response.Content;
+                return ctx.Students.AsNoTracking().Where(s => s.Id.Equals(Id)).FirstOrDefault();
             }
         }
-        public async Task<bool> Delete(Student student)
+        public bool Delete(Students student)
         {
-            using(var db = GetCredentials())
+            using (var ctx = new SysacadFRGPContext())
             {
-                var response = await db.Entities.DeleteAsync(student);
-
-                return response.IsSuccess;
+                ctx.Students.Remove(student);
+                ctx.SaveChanges();
+                return true;
             }
         }
-        public async Task<bool> CreateOrUpdate(Student student)
+        public async Task<bool> CreateOrUpdate(StudentDTO student)
         {
             try
             {
                 using (var db = GetCredentials())
                 {
-                    if (!string.IsNullOrEmpty(student._id) && !string.IsNullOrEmpty(student._rev))
+                    if (student.Id > 0)
                     {
                         var response = await db.Entities.PutAsync(student);
                         return response.IsSuccess;
                     }
                     else
                     {
-                        student._id = null;
-                        student._rev = null;
                         var response = await db.Entities.PostAsync(student);
                         return response.IsSuccess;
                     }
-
                 }
             }
             catch (Exception ex)

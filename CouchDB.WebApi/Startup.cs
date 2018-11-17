@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +15,7 @@ using Presentation.Bussiness.Classes;
 using Presentation.Bussiness.Services.Interfaces;
 using Presentation.Repositories.Interfaces;
 using Presentation.Repositories.Repositories;
+using Presentation.WebApi.Mapper;
 
 namespace Presentation.WebApi
 {
@@ -33,6 +35,12 @@ namespace Presentation.WebApi
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowMyOrigin", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+            // AutoMapper
+            services.AddAutoMapper();
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MapperProfile());
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

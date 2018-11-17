@@ -27,24 +27,20 @@ namespace Presentation.WebApi.Controllers
         {
             try
             {
-                var Students = studentService.GetAllStudents();
-
-                return Ok(Students);
+                return Ok(studentService.GetAllStudents());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetStudentById(string id)
+        public IActionResult GetStudentById(int id)
         {
             try
             {
-                var student = studentService.GetStudentById(id);
-
-                return Ok(student);
+                return Ok(studentService.GetStudentById(id));
             }
             catch (Exception)
             {
@@ -54,14 +50,13 @@ namespace Presentation.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(string Id)
+        public IActionResult Delete(int Id)
         {
             try
             {
                 var student = studentService.GetStudentById(Id);
-                var response = studentService.Delete(student);
 
-                return Ok(response);
+                return Ok(studentService.Delete(student));
             }
             catch (Exception ex)
             {
@@ -73,13 +68,11 @@ namespace Presentation.WebApi.Controllers
         
         [HttpPost]
         [Produces("application/json", Type = typeof(bool))]
-        public IActionResult Post([FromBody]Student student)
+        public IActionResult Post([FromBody]StudentDTO student)
         {
             try
             {
-                var response = studentService.CreateOrUpdate(student);
-
-                return Ok(response);
+                return Ok(studentService.CreateOrUpdate(student));
             }
             catch (Exception ex)
             {

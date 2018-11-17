@@ -1,6 +1,6 @@
 import {MatCheckboxModule, MatToolbarModule, MatIconModule, MatListModule,
         MatTableModule, MatFormFieldModule, MatButtonToggleModule, MatIcon, MatSnackBarModule,
-        MatCardModule, MatGridListModule, MatSelectModule, MatOptionModule, MatNativeDateModule} from '@angular/material';
+        MatCardModule, MatGridListModule, MatSelectModule, MatOptionModule, MatNativeDateModule, MatDialogModule} from '@angular/material';
 
 // import {MatDatepickerModule, MatDatepickerToggle} from '@angular/material/datepicker';
 import { NgModule } from '@angular/core';
@@ -29,7 +29,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
             MatGridListModule,
             MatSelectModule,
             MatOptionModule,
-            MatNativeDateModule],
+            MatNativeDateModule, MatDialogModule],
 
   exports: [MatButtonModule,
             MatCheckboxModule,
@@ -48,6 +48,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
             MatGridListModule,
             MatSelectModule,
             MatOptionModule,
-            MatNativeDateModule],
+            MatNativeDateModule, MatDialogModule],
 })
 export class MaterialModule { }

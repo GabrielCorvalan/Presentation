@@ -2,10 +2,10 @@
 
 namespace Presentation.Entities.Models
 {
-    public class Base
+    public class BaseDTO
     {
-        public string _id { get; set; }
-        public string _rev { get; set; }
+        public int Id { get; set; }
         public DateTime DateCreated { get; set; }
+        public bool Deleted { get; set; }
     }
 }
