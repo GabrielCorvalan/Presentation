@@ -15,6 +15,7 @@ namespace Tp.Entity.Model
         public string PageUrl { get; set; }
         public string Description { get; set; }
         public string Tittle { get; set; }
+        public bool Deleted { get; set; }
 
         public ICollection<PagesForRols> PagesForRols { get; set; }
         public ICollection<PagesForUsers> PagesForUsers { get; set; }

@@ -6,6 +6,6 @@ namespace Presentation.Entities.Models
     {
         public string RolName { get; set; }
 
-        public List<PagesDTO> Pages { get; set; }
+        public List<PageDTO> Pages { get; set; }
     }
 }

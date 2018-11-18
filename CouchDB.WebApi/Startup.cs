@@ -51,6 +51,9 @@ namespace Presentation.WebApi
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserService, UserService>();
+
+            services.AddTransient<IPageRepository, PageRepository>();
+            services.AddTransient<IPageService, PageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
