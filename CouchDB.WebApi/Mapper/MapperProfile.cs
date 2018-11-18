@@ -10,6 +10,9 @@ namespace Presentation.WebApi.Mapper
         {
             CreateMap<Students, StudentDTO>();
             CreateMap<StudentDTO, Students>();
+
+            CreateMap<Users, UserDTO>();
+            CreateMap<UserDTO, Users>();
         }
     }
 }

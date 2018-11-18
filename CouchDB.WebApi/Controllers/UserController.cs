@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Presentation.Bussiness.Services.Interfaces;
+using Presentation.Bussiness.Interfaces;
 using Presentation.Entities.Models;
 
 namespace Presentation.WebApi.Controllers
@@ -9,21 +9,21 @@ namespace Presentation.WebApi.Controllers
     [EnableCors("AllowMyOrigin")]
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly IStudentService studentService;
+        private readonly IUserService userService;
 
-        public StudentController(IStudentService service)
+        public UserController(IUserService service)
         {
-            studentService = service;
+            userService = service;
         }
 
         [HttpGet]
-        public IActionResult GetAllStudents()
+        public IActionResult GetAllUsers()
         {
             try
             {
-                return Ok(studentService.GetAllStudents());
+                return Ok(userService.GetAllUsers());
             }
             catch (Exception ex)
             {
@@ -32,11 +32,11 @@ namespace Presentation.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetStudentById(int id)
+        public IActionResult GetUserById(int id)
         {
             try
             {
-                return Ok(studentService.GetStudentById(id));
+                return Ok(userService.GetUserById(id));
             }
             catch (Exception)
             {
@@ -50,9 +50,9 @@ namespace Presentation.WebApi.Controllers
         {
             try
             {
-                var student = studentService.GetStudentById(Id);
+                var user = userService.GetUserById(Id);
 
-                return Ok(studentService.Delete(student));
+                return Ok(userService.Delete(user));
             }
             catch (Exception ex)
             {
@@ -61,14 +61,14 @@ namespace Presentation.WebApi.Controllers
             }
         }
 
-        
+
         [HttpPost]
         [Produces("application/json", Type = typeof(bool))]
-        public IActionResult Post([FromBody]StudentDTO student)
+        public IActionResult Post([FromBody]UserDTO user)
         {
             try
             {
-                return Ok(studentService.CreateOrUpdate(student));
+                return Ok(userService.CreateOrUpdate(user));
             }
             catch (Exception ex)
             {

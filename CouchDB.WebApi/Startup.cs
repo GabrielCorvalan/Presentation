@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Presentation.Bussiness.Classes;
+using Presentation.Bussiness.Interfaces;
 using Presentation.Bussiness.Services.Interfaces;
 using Presentation.Repositories.Interfaces;
 using Presentation.Repositories.Repositories;
@@ -47,6 +48,9 @@ namespace Presentation.WebApi
             // Dependency Inyection
             services.AddTransient<IStudentService, StudentService>();
             services.AddTransient<IStudentRepository, StudentRepository>();
+
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

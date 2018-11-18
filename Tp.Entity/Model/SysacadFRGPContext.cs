@@ -22,8 +22,12 @@ namespace Tp.Entity.Model
         public virtual DbSet<CorrelativesSubjects> CorrelativesSubjects { get; set; }
         public virtual DbSet<Countries> Countries { get; set; }
         public virtual DbSet<Locations> Locations { get; set; }
+        public virtual DbSet<Pages> Pages { get; set; }
+        public virtual DbSet<PagesForRols> PagesForRols { get; set; }
+        public virtual DbSet<PagesForUsers> PagesForUsers { get; set; }
         public virtual DbSet<PersonForAddress> PersonForAddress { get; set; }
         public virtual DbSet<Provinces> Provinces { get; set; }
+        public virtual DbSet<Rols> Rols { get; set; }
         public virtual DbSet<StudensPerSubject> StudensPerSubject { get; set; }
         public virtual DbSet<StudentFinalTest> StudentFinalTest { get; set; }
         public virtual DbSet<Students> Students { get; set; }
@@ -33,13 +37,14 @@ namespace Tp.Entity.Model
         public virtual DbSet<SubjectStates> SubjectStates { get; set; }
         public virtual DbSet<Teachers> Teachers { get; set; }
         public virtual DbSet<Tests> Tests { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=SysacadFRGP;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=SysacadFRGP;Integrated Security=True;");
             }
         }
 
@@ -122,6 +127,49 @@ namespace Tp.Entity.Model
                     .HasConstraintName("FK__Locations__Provi__3C69FB99");
             });
 
+            modelBuilder.Entity<Pages>(entity =>
+            {
+                entity.Property(e => e.Description)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PageUrl)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Tittle)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<PagesForRols>(entity =>
+            {
+                entity.HasOne(d => d.Page)
+                    .WithMany(p => p.PagesForRols)
+                    .HasForeignKey(d => d.PageId)
+                    .HasConstraintName("FK__PagesForR__PageI__7B5B524B");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.PagesForRols)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__PagesForR__UserI__7C4F7684");
+            });
+
+            modelBuilder.Entity<PagesForUsers>(entity =>
+            {
+                entity.HasOne(d => d.Page)
+                    .WithMany(p => p.PagesForUsers)
+                    .HasForeignKey(d => d.PageId)
+                    .HasConstraintName("FK__PagesForU__PageI__778AC167");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.PagesForUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__PagesForU__UserI__787EE5A0");
+            });
+
             modelBuilder.Entity<PersonForAddress>(entity =>
             {
                 entity.HasOne(d => d.Address)
@@ -152,6 +200,13 @@ namespace Tp.Entity.Model
                     .WithMany(p => p.Provinces)
                     .HasForeignKey(d => d.CountryId)
                     .HasConstraintName("FK__Provinces__Count__398D8EEE");
+            });
+
+            modelBuilder.Entity<Rols>(entity =>
+            {
+                entity.Property(e => e.RolName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<StudensPerSubject>(entity =>
@@ -306,6 +361,34 @@ namespace Tp.Entity.Model
                     .WithMany(p => p.Tests)
                     .HasForeignKey(d => d.TeacherId)
                     .HasConstraintName("FK__Tests__TeacherId__4BAC3F29");
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.Property(e => e.Email)
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Names)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Surnames)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Rol)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.RolId)
+                    .HasConstraintName("FK__Users__RolId__72C60C4A");
             });
         }
     }
