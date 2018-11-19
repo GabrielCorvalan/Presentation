@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class DataService {
 
-    _baseUrl = '';
+    _baseUrl = 'https://localhost:44321/api/';
 
     constructor() {
     }

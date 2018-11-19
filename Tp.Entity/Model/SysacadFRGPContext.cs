@@ -44,7 +44,7 @@ namespace Tp.Entity.Model
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=SysacadFRGP;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=SysacadFRGP;Integrated Security=True");
             }
         }
 
@@ -151,10 +151,10 @@ namespace Tp.Entity.Model
                     .HasForeignKey(d => d.PageId)
                     .HasConstraintName("FK__PagesForR__PageI__7B5B524B");
 
-                entity.HasOne(d => d.User)
+                entity.HasOne(d => d.Rol)
                     .WithMany(p => p.PagesForRols)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__PagesForR__UserI__7C4F7684");
+                    .HasForeignKey(d => d.RolId)
+                    .HasConstraintName("FK__PagesForR__Rol__7C4F7684");
             });
 
             modelBuilder.Entity<PagesForUsers>(entity =>
@@ -366,29 +366,35 @@ namespace Tp.Entity.Model
             modelBuilder.Entity<Users>(entity =>
             {
                 entity.Property(e => e.Email)
+                    .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Names)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Password)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Surnames)
+                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserName)
+                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Rol)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.RolId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Users__RolId__72C60C4A");
+
+                entity.HasOne(d => d.Student)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.StudentId)
+                    .HasConstraintName("FK_Users_Student");
+
+                entity.HasOne(d => d.Teacher)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.TeacherId)
+                    .HasConstraintName("FK_Users_Teacher");
             });
         }
     }

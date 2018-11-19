@@ -22,14 +22,27 @@ namespace Presentation.Repositories.Repositories
         {
             using (var ctx = new SysacadFRGPContext())
             {
-                return ctx.Users.AsNoTracking().ToList();
+                var users = ctx.Users.AsNoTracking().Include("Rol").ToList();
+
+
+                return ctx.Users.AsNoTracking().Include("Rol").ToList();
             }
         }
         public Users GetUserById(int Id)
         {
             using (var ctx = new SysacadFRGPContext())
             {
-                return ctx.Users.AsNoTracking().Where(s => s.Id.Equals(Id)).FirstOrDefault();
+                return ctx.Users.AsNoTracking().Where(s => s.Id.Equals(Id)).Include("Rol").FirstOrDefault();
+            }
+        }
+        public Users GetUserLogin(string userName, string password)
+        {
+            using (var ctx = new SysacadFRGPContext())
+            {
+                return ctx.Users.AsNoTracking()
+                        .Include("Rol")
+                        .Where(s => s.UserName.Equals(userName) && s.Password.Equals(password))
+                        .FirstOrDefault();
             }
         }
         public bool Delete(UserDTO user)
@@ -70,11 +83,9 @@ namespace Presentation.Repositories.Repositories
                     {
                         ctx.Users.Attach(oUser);
                     }
-                    oUser.Names = user.Names;
                     oUser.Email = user.Email;
                     oUser.Password = user.Password;
                     oUser.RolId = user.RolId;
-                    oUser.Surnames = user.Surnames;
                     oUser.UserName = user.UserName;
 
                     ctx.SaveChanges();

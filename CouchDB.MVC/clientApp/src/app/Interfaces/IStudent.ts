@@ -1,13 +1,13 @@
+import { IAddress } from './IAddress';
 
 export interface IStudent {
-  id: string;
-  firstName: string;
-  lastName: string;
+  id: number;
+  names: string;
+  surnames: string;
+  studentFile: number;
   birthdate: Date;
-  dni: string;
-  cuil: string;
+  dni: number;
+  cuil: number;
+  address: IAddress;
   deleted: boolean;
-  studentFile: string;
-  age: number;
-  address: string;
 }

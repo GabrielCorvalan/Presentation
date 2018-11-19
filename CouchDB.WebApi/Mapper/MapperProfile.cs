@@ -14,6 +14,8 @@ namespace Presentation.WebApi.Mapper
             CreateMap<Users, UserDTO>();
             CreateMap<UserDTO, Users>();
 
+            CreateMap<Rols, RolDTO>();
+
             CreateMap<Pages, PageDTO>();
             CreateMap<PageDTO, Pages>();
         }

@@ -54,5 +54,6 @@ li a:hover {
   background-color: #111;
 }
 .active {
-  background-color: #4CAF50;
+  font-style: italic;
+  font-weight: bold;
 }

@@ -16,7 +16,7 @@ import { CorrelativityComponent } from './components/correlativity/correlativity
 import { CorrelativityAddComponent } from './components/correlativity/correlativity-add/correlativity-add.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   // login
   { path: 'login', component: LoginComponent },
   // Home

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { IStudent } from '../../Interfaces/IStudent';
@@ -12,15 +12,13 @@ import { DataService } from '../../DataService';
   providedIn: 'root'
 })
 export class StudentService extends DataService {
-  public url: string;
 
   constructor(private http: HttpClient) {
     super();
-    this.url = 'https://localhost:44321/api';
   }
 
   getStudents(): Observable<IStudent[]> {
-    return this.http.get(this.url + '/student').pipe(
+    return this.http.get(this._baseUrl + '/student').pipe(
       map(res => {
         return res;
       }),
@@ -28,7 +26,7 @@ export class StudentService extends DataService {
   }
 
   getStudentById(id: string): Observable<IStudent> {
-    return this.http.get(this.url + '/student/' + id).pipe(
+    return this.http.get(this._baseUrl + '/student/' + id).pipe(
       map((res: IStudent) => {
         return res;
       }),
@@ -38,7 +36,7 @@ export class StudentService extends DataService {
   createStudent(student: IStudent): Observable<boolean> {
     const headers: HttpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
     const result = JSON.stringify(student);
-    return this.http.post(this.url + '/student', result, { headers: headers }).pipe(
+    return this.http.post(this._baseUrl + '/student', result, { headers: headers }).pipe(
       map(res => {
         return res;
       }),
@@ -46,7 +44,7 @@ export class StudentService extends DataService {
   }
 
   deleteStudent(id: string): Observable<boolean> {
-    return this.http.delete(this.url + '/student/' + id).pipe(
+    return this.http.delete(this._baseUrl + '/student/' + id).pipe(
       map((res: boolean) => {
         return res;
       }),

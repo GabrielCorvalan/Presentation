@@ -6,15 +6,18 @@
             <h2>Login</h2>
           </div>
           <div class="card-body">
-            <form class="center-div form-login">
+            <form class="center-div form-login" [formGroup]="form">
               <mat-form-field class="full-with">
-                  <input matInput placeholder="User">
+                  <input matInput placeholder="User"
+                        formControlName="userName">
               </mat-form-field>
               <mat-form-field class="full-with">
-                <input type="password" matInput placeholder="Password">
+                <input type="password" matInput 
+                                       placeholder="Password"
+                                       formControlName="password">
               </mat-form-field>
               <div class="button-row">
-                  <button mat-flat-button color="primary" routerLink="/home" class="btn btn-block">Login</button>
+                  <button mat-flat-button color="primary" (click)="authenticate()" class="btn btn-block">Login</button>
               </div>
             </form>
             <div class="mt-4">

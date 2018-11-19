@@ -17,13 +17,13 @@
                        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
             <!-- Aca se declaran los items del nav -->
             <mat-nav-list>
-              <a mat-list-item routerLinkActive="active" routerLink="/mateers/planMateers">Plan Mateers</a>
-              <a mat-list-item routerLinkActive="active" routerLink="/student/edit">Academic state</a>
+              <a *ngFor="let nav of pages" mat-list-item routerLinkActive="active" [routerLink]="nav.pageUrl">{{ nav.tittle }}</a>
+              <!-- <a mat-list-item routerLinkActive="active" routerLink="/student/edit">Academic state</a>
               <a mat-list-item routerLinkActive="active" routerLink="/exam">Exams</a>
               <a mat-list-item routerLinkActive="active" routerLink="/cursado">Cursado/Notas</a>
               <a mat-list-item routerLinkActive="active" routerLink="/correlativity">Correlatividad</a>
               <a mat-list-item routerLinkActive="active" routerLink="/isc">Inscripcion</a>
-              <a mat-list-item routerLinkActive="active" routerLink="/aaaa"></a>
+              <a mat-list-item routerLinkActive="active" routerLink="/aaaa"></a> -->
             </mat-nav-list>
           </mat-sidenav>
       

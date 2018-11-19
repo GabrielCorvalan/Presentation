@@ -12,6 +12,7 @@ namespace Tp.Entity.Model
             StudentFinalTest = new HashSet<StudentFinalTest>();
             StudentsPerCareer = new HashSet<StudentsPerCareer>();
             Tests = new HashSet<Tests>();
+            Users = new HashSet<Users>();
         }
 
         public int Id { get; set; }
@@ -30,5 +31,6 @@ namespace Tp.Entity.Model
         public ICollection<StudentFinalTest> StudentFinalTest { get; set; }
         public ICollection<StudentsPerCareer> StudentsPerCareer { get; set; }
         public ICollection<Tests> Tests { get; set; }
+        public ICollection<Users> Users { get; set; }
     }
 }

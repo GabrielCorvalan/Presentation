@@ -10,5 +10,6 @@ namespace Presentation.Repositories.Interfaces
         Users GetUserById(int Id);
         bool CreateOrUpdate(UserDTO user);
         bool Delete(UserDTO user);
+        Users GetUserLogin(string userName, string password);
     }
 }
